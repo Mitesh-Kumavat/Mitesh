@@ -1,1 +1,50 @@
 @import "tailwindcss";
+
+@theme inline {
+    --animate-aurora: aurora 60s linear infinite;
+
+    @keyframes aurora {
+        from {
+            background-position:
+                50% 50%,
+                50% 50%;
+        }
+
+        to {
+            background-position:
+                350% 50%,
+                350% 50%;
+        }
+    }
+}
+
+@layer base {
+    .text-glow {
+        text-shadow: 0 0 102px #2d2929;
+    }
+
+    .text-gradient-black {
+        background-image: linear-gradient(180deg, #f6f4f4, #454545);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .text-gradient-silver {
+        background-image: linear-gradient(180deg, #ffffff, #cbcbcb);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .text-glow {
+        text-shadow: 01 01 18px #929191;
+    }
+
+    .text-gradient-violet {
+        background-image: linear-gradient(120deg, #b04ef1, #5506af);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}

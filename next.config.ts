@@ -4,8 +4,13 @@ import createMDX from '@next/mdx'
 const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   images: {
-    domains: [""]
-  }
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
+      },
+    ],
+  },
 };
 
 const withMDX = createMDX({

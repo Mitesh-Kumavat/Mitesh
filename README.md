@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mitesh Kumavat
 
-## Getting Started
+**Full Stack Developer**  
+_Building scalable and efficient web applications_  
 
-First, run the development server:
+📍 [Portfolio](https://miteshkumavat.vercel.app) | ✉️ [Email](mailto:miteshkumavat777@gmail.com)  
+🔗 [GitHub](https://github.com/mitesh-kumavat) | [LinkedIn](https://linkedin.com/in/mitesh-kumavat)  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📝 About Me
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Hey, I'm **Mitesh Kumavat**, a passionate **Full Stack Developer** with a keen interest in creating high-performance web applications. I love solving problems with clean and efficient code while continuously exploring new technologies.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🎓 Education
 
-To learn more about Next.js, take a look at the following resources:
+- **LJ Institute of Engineering**  
+  _B.Tech in Computer Science & Engineering (2nd Year)_
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Skills
 
-## Deploy on Vercel
+### **Frontend:**
+- React.js, Next.js, TypeScript
+- Tailwind CSS, Framer Motion, Shadcn UI
+- HTML, CSS, JavaScript
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **Backend:**
+- Node.js, Express.js, Flask, FastAPI
+- REST API Development
+- Authentication & Authorization
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### **Databases:**
+- MongoDB, SQL, SQLite
+
+### **Tools & Other:**
+- Git, GitHub, Postman, Vercel
+- AI-powered applications
+---
+
+## 💻 Projects
+
+### **[MovieVerse](https://flask-movieverse.vercel.app/)**
+_A Flask-based movie recommendation web app._  
+**Tech Stack:** Python, Flask, API Development, Tailwind CSS, SQLite  
+🔗 [GitHub](https://github.com/mitesh-kumavat/movieverse)
+
+---
+
+### **[DevHelp](https://devhelp.app/)**
+_A platform for developers to discover curated resources._  
+**Tech Stack:** React, Node.js, MongoDB, Tailwind CSS, Express.js  
+🔗 [Live](https://devhelp.app/)
+
+---
+
+### **[Opinions](https://github.com/mitesh-kumavat/opinions)**
+_A MERN-based polling website for voting._  
+**Tech Stack:** React, TypeScript, MongoDB, Node.js, Express.js  
+🔗 [GitHub](https://github.com/mitesh-kumavat/opinions)
+
+---
+
+### **[Landing Page](https://mitesh-page.vercel.app/)**
+_Modern landing page with smooth UI/UX._  
+**Tech Stack:** React, Tailwind CSS  
+🔗 [GitHub](https://github.com/mitesh-kumavat/LandingPage) | 🔗 [Live](https://mitesh-page.vercel.app/)
+
+---
+
+## 📌 Interests
+
+- Full-Stack Development
+- Artificial Intelligence
+- Open-Source Contributions
+---
+
+## 📫 Contact
+
+- 📧 Email: [miteshkumavat777@gmail.com](mailto:miteshkumavat777@gmail.com)
+- 🌐 Portfolio: [miteshkumavat.vercel.app](https://miteshkumavat.vercel.app)
+- 🐙 GitHub: [github.com/mitesh-kumavat](https://github.com/mitesh-kumavat)
+- 🔗 LinkedIn: [linkedin.com/in/mitesh-kumavat](https://linkedin.com/in/mitesh-kumavat)
+- 📷 Instagram: [mitesh_777](https://instagram.com/mitesh_777)
+
+---
+
+### ⚡ *"Passionate about building efficient and scalable applications!"*
