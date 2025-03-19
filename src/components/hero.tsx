@@ -2,9 +2,9 @@
 import { motion } from "motion/react";
 import React from "react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import { ArrowRight } from "lucide-react";
 import { FlipWords } from "./ui/flip-words";
 import { PERSONAL_DETAILS } from "@/data/data";
+import Connect from "./buttons/connect";
 
 export function HeroSection() {
 
@@ -28,12 +28,9 @@ export function HeroSection() {
                     into seamless digital experiences
                 </h1>
                 <div className="font-medium text-center  text-xl md:text-2xl transition-all duration-300 py-4 text-gradient-black">
-                    Hello, I'm {PERSONAL_DETAILS.name} a  <FlipWords words={words} /> <br />
+                    Hello, I&apos;m {PERSONAL_DETAILS.name} a  <FlipWords words={words} /> <br />
                 </div>
-                <button className="bg-zinc-100/20 hover:bg-white hover:text-black border-1/2 border-white backdrop-blur-lg shadow-2xl flex gap-2 justify-center items-center rounded-full w-fit text-white py-1 px-2 cursor-pointer">
-                    <span className="px-1 font-medium ml-1 ">Let's Connect</span>
-                    <span className="p-2 bg-zinc-100 rounded-full font-extrabold text-black"><ArrowRight /></span>
-                </button>
+                <Connect />
             </motion.div>
         </AuroraBackground>
     );

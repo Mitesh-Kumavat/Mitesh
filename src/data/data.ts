@@ -17,8 +17,8 @@ export const PROJECTS: ProjectPropsTypes[] = [
         overview:
             "Movieverse is a Flask-based web application designed to provide personalized movie recommendations to users. It uses a clean and responsive UI to ensure an engaging experience for movie enthusiasts.",
         tags: ["Python", "Flask", "API Development", "Tailwind CSS", "SQLite"],
-        imageUrl: null,
-        theme: "",
+        imageUrl: "./public/movieverse.png",
+        theme: "pink",
     },
     {
         id: "02",
@@ -40,7 +40,7 @@ export const PROJECTS: ProjectPropsTypes[] = [
             "REST Api",
         ],
         imageUrl: null,
-        theme: "",
+        theme: "purple",
     },
     {
         id: "03",
@@ -62,7 +62,7 @@ export const PROJECTS: ProjectPropsTypes[] = [
             "REST Api",
         ],
         imageUrl: null,
-        theme: "",
+        theme: "sky",
     },
     {
         id: "04",
@@ -74,7 +74,7 @@ export const PROJECTS: ProjectPropsTypes[] = [
             "A landing page for websites with a modern UI using Tailwind CSS for styling and React to create a single-page website.",
         tags: ["React", "Tailwind CSS", "Styling", "UI/UX", "Designing"],
         imageUrl: null,
-        theme: "",
+        theme: "cyan",
     },
 ];
 
@@ -130,7 +130,7 @@ export const PERSONAL_DETAILS = {
         },
         {
             label: "Email",
-            url: "mailto:miteshkumavat777@gmail.com",
+            url: "mailto:   miteshkumavat777@gmail.com",
             icon: "https://cdn.simpleicons.org/gmail/D14836"
         },
         {
