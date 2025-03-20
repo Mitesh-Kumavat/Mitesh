@@ -103,7 +103,6 @@ const Drawer = ({ isOpen, onClose }: DrawerProps) => {
                         />
                     </div>
                 </div>
-
                 {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
                 <motion.button

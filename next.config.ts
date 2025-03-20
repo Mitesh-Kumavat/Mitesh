@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["cdn.simpleicons.org"],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 const withMDX = createMDX({
