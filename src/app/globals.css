@@ -5,9 +5,7 @@
 
     @keyframes aurora {
         from {
-            background-position:
-                50% 50%,
-                50% 50%;
+            background-position: 50% 50%, 50% 50%;
         }
 
         to {
@@ -19,6 +17,7 @@
 }
 
 @layer base {
+
     .text-glow {
         text-shadow: 0 0 102px #2d2929;
     }

@@ -1,7 +1,7 @@
 import { ProjectPropsTypes, SkillPropsTypes } from "@/types";
 
 export const NAVLINKS = [
-    { id: "01", label: "Home", path: "/" },
+    { id: "01", label: "Home", path: "#home" },
     { id: "02", label: "About", path: "#about" },
     { id: "03", label: "Projects", path: "#projects" },
     { id: "04", label: "Contact", path: "#contact" },

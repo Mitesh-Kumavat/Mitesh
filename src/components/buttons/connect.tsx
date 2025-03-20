@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import Drawer from "../drawer";
 
@@ -45,7 +45,11 @@ const Connect = () => {
                 </motion.span>
             </motion.button>
 
-            {isOpen && <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)} />}
+            {isOpen &&
+                <AnimatePresence>
+                    <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)} />
+                </AnimatePresence>
+            }
         </>
     );
 };

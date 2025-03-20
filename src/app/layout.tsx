@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${poppins.className} bg-zinc-800 antialiased w-full h-screen`}
+        className={` ${poppins.className} bg-zinc-800 mx-auto antialiased w-full h-screen`}
       >
         <LenisProvider />
         <Navbar />

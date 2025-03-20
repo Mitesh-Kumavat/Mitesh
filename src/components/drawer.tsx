@@ -1,15 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { X, Mail, MessageCircle } from "lucide-react";
+import { X } from "lucide-react";
 import { useState } from "react";
-import Link from "next/link";
-
-const socialLinks = [
-    { href: "https://github.com/yourusername", label: "GitHub", icon: <i className="fa-brands fa-github"></i> },
-    { href: "https://linkedin.com/in/yourusername", label: "LinkedIn", icon: <i className="fa-brands fa-linkedin"></i> },
-    { href: "https://instagram.com/yourusername", label: "Instagram", icon: <i className="fa-brands fa-instagram"></i> },
-];
 
 interface DrawerProps {
     isOpen: boolean;
@@ -19,13 +12,28 @@ interface DrawerProps {
 const Drawer = ({ isOpen, onClose }: DrawerProps) => {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
+    const [error, setError] = useState("");
+    const [isSending, setIsSending] = useState(false);
 
-    const isButtonDisabled = email.trim() === "" || message.trim() === "";
+    const validateEmail = (email: string) => {
+        return /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
+    };
 
     const handleSend = async () => {
-        if (!email || !message) return;
+        setError("");
+
+        if (!email || !message) {
+            setError("All fields are required.");
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            setError("Invalid email address.");
+            return;
+        }
 
         try {
+            setIsSending(true);
             const response = await fetch("/api/send-email", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -40,79 +48,74 @@ const Drawer = ({ isOpen, onClose }: DrawerProps) => {
                 setMessage("");
                 onClose();
             } else {
-                alert(`Error: ${data.error}`);
+                setError(`Error: ${data.error}`);
             }
         } catch (error) {
-            alert("Failed to send message. Try again later.");
+            setError("Failed to send message. Try again later.");
+        } finally {
+            setIsSending(false);
         }
     };
 
-
     return (
-        <motion.div
-            className="fixed lg:w-4xl bottom-0 w-full bg-zinc-900 text-white shadow-lg rounded-t-2xl p-6 z-50"
-            initial={{ y: "100%" }}
-            animate={{ y: isOpen ? "0%" : "100%" }}
-            transition={{ type: "spring", stiffness: 200, damping: 25 }}
+        <div
+            className={`fixed inset-0 z-[9998] flex justify-center items-end transition-all duration-300 ${isOpen ? "backdrop-blur-sm bg-black/50 visible opacity-100" : "invisible opacity-0"
+                }`}
+            onClick={onClose}
         >
-            {/* Close Button */}
-            <div className="flex justify-between items-center">
-                <h2 className="text-xl font-semibold">Let&apos;s Connect</h2>
-                <button onClick={onClose} className="text-gray-300 hover:text-white">
-                    <X size={24} />
-                </button>
-            </div>
-
-            {/* Email Input */}
-            <div className="mt-4">
-                <label className="block text-sm mb-1">Your Email</label>
-                <div className="relative">
-                    <Mail className="absolute left-3 top-3 text-gray-400" />
-                    <input
-                        type="email"
-                        placeholder="Enter your email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="w-full bg-zinc-800 text-white px-10 py-2 rounded-lg border border-gray-600 focus:ring-2 focus:ring-white"
-                    />
-                </div>
-            </div>
-
-            {/* Message Input */}
-            <div className="mt-4">
-                <label className="block text-sm mb-1">Your Message</label>
-                <div className="relative">
-                    <MessageCircle className="absolute left-3 top-3 text-gray-400" />
-                    <textarea
-                        placeholder="Enter your message"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        className="w-full bg-zinc-800 text-white px-10 py-2 rounded-lg border border-gray-600 focus:ring-2 focus:ring-white"
-                        rows={3}
-                    />
-                </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="mt-6 flex justify-center gap-6">
-                {socialLinks.map((link, index) => (
-                    <Link key={index} href={link.href} target="_blank" className="text-xl hover:text-gray-400 transition-all">
-                        {link.icon}
-                    </Link>
-                ))}
-            </div>
-
-            {/* Send Button */}
-            <motion.button
-                onClick={handleSend}
-                disabled={isButtonDisabled}
-                className={`w-full mt-6 py-2 text-white font-semibold rounded-lg ${isButtonDisabled ? "bg-gray-600 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
-                    }`}
-                whileTap={{ scale: 0.95 }}
+            <motion.div
+                className="fixed lg:w-xl bottom-0 w-[90%] bg-zinc-950 shadow-black text-white shadow-lg rounded-t-xl p-6 lg:px-8 z-[9999]"
+                initial={{ y: "100%" }}
+                animate={{ y: isOpen ? "0%" : "100%" }}
+                onClick={(e) => e.stopPropagation()}
+                exit={{ y: "50%", transition: { duration: 0.2 } }}
+                transition={{ type: "spring", stiffness: 200, damping: 25 }}
             >
-                Send Message
-            </motion.button>
-        </motion.div>
+                <div className="flex justify-between items-center">
+                    <h2 className="text-xl font-semibold">Let&apos;s Connect</h2>
+                    <button onClick={onClose} className="text-gray-300 cursor-pointer hover:text-white">
+                        <X size={24} />
+                    </button>
+                </div>
+
+                <div className="mt-4">
+                    <div className="relative">
+                        <label className="text-sm text-zinc-300/80 mb-9"> Email Address</label>
+                        <input
+                            type="email"
+                            placeholder="john@gmail.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="w-full mt-1 bg-zinc-800/40 text-white px-3 transition-all duration-300 p-2 text-sm font-light rounded-lg border border-zinc-700 ring-0 ease-in-out focus:ring-1 focus:ring-neutral-700"
+                        />
+                    </div>
+                </div>
+
+                <div className="mt-4">
+                    <div className="relative">
+                        <label className="text-sm text-zinc-300/80 mb-9">Your Message</label>
+                        <textarea
+                            placeholder="I would like to connect with you..."
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                            className="w-full mt-1 bg-zinc-800/40 text-white px-3 transition-all duration-300 p-2 text-sm font-light rounded-lg border border-zinc-700 ring-0 ease-in-out focus:ring-1 focus:ring-neutral-700"
+                            rows={3}
+                        />
+                    </div>
+                </div>
+
+                {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+
+                <motion.button
+                    onClick={handleSend}
+                    disabled={isSending}
+                    className={`w-full mt-6 py-2 text-black text-sm font-medium rounded-lg ${isSending ? "bg-zinc-300/90 cursor-not-allowed" : "bg-zinc-100 cursor-pointer hover:bg-zinc-200"}`}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    {isSending ? "Sending..." : "Send Message"}
+                </motion.button>
+            </motion.div>
+        </div>
     );
 };
 

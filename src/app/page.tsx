@@ -8,7 +8,7 @@ const page = () => {
         <main className='bg-zinc-800'>
             <HeroSection />
             <ProjectSection />
-            {/* <Contact /> */}
+            <Contact />
         </main>
     )
 }
