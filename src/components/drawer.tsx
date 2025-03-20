@@ -10,10 +10,10 @@ interface DrawerProps {
 }
 
 const Drawer = ({ isOpen, onClose }: DrawerProps) => {
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
-    const [error, setError] = useState("");
-    const [isSending, setIsSending] = useState(false);
+    const [email, setEmail] = useState<string>("");
+    const [message, setMessage] = useState<string>("");
+    const [error, setError] = useState<string>("");
+    const [isSending, setIsSending] = useState<boolean>(false);
 
     const validateEmail = (email: string) => {
         return /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
