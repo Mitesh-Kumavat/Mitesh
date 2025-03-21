@@ -2,7 +2,6 @@
 import { motion } from "motion/react";
 import React from "react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import { FlipWords } from "./ui/flip-words";
 import { PERSONAL_DETAILS } from "@/data/data";
 import Connect from "./buttons/connect";
 
@@ -11,7 +10,7 @@ export function HeroSection() {
     const words = ["Full Stack Developer", "Passionate Coder", "Product Developer", "2nd Year Student"]
 
     return (
-        <AuroraBackground>
+        <AuroraBackground >
             <motion.div
                 initial={{ opacity: 0.0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +27,7 @@ export function HeroSection() {
                     into seamless digital experiences
                 </h1>
                 <div className="font-medium text-center  text-xl md:text-2xl transition-all duration-300 py-4 text-gradient-black">
-                    Hello, I&apos;m {PERSONAL_DETAILS.name} a  <FlipWords words={words} /> <br />
+                    Hello, I&apos;m {PERSONAL_DETAILS.name} a <span className="text-white">Full Stack Developer</span> <br />
                 </div>
                 <Connect />
             </motion.div>

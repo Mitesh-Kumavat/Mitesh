@@ -1,4 +1,6 @@
+"use client";
 import { ProjectPropsTypes } from '@/types'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const ProjectCard = ({
@@ -11,11 +13,16 @@ const ProjectCard = ({
     tags,
     imageUrl,
     theme }: ProjectPropsTypes) => {
+
+
+    const router = useRouter();
+    const cardOnClick = () => {
+        router.push(`/projects/${label.toLowerCase().replace(/ /g, '-')}`)
+    }
+
     return (
-        <div className='max-w-2xs overflow-hidden bg-amber-200/20 gap-2 '>
-            {id}
-            {label}
-            {link}
+        <div className='max-w-2xs overflow-hidden gap-2 cursor-pointer' onClick={cardOnClick}>
+
             {githubLink}
             {liveLink}
             {overview}

@@ -107,36 +107,26 @@ export const PERSONAL_DETAILS = {
     role: "Full Stack Developer",
     tagline: "Building scalable and efficient web applications",
     about: "Hey, I'm Mitesh Kumavat, a passionate Full Stack Developer with a keen interest in creating high-performance web applications. I love solving problems with clean and efficient code while continuously exploring new technologies.",
-    education: {
-        college: "LJ Institute of Engineering",
-        currentYear: "2nd Year",
-        major: "Computer Science & Engineering"
-    },
     socialLinks: [
         {
             label: "GitHub",
             url: "https://github.com/mitesh-kumavat",
-            icon: "https://cdn.simpleicons.org/github/181717"
         },
         {
             label: "LinkedIn",
             url: "https://linkedin.com/in/mitesh-kumavat",
-            icon: "https://cdn.simpleicons.org/linkedin/0077B5"
         },
         {
             label: "Instagram",
             url: "https://instagram.com/mitesh_777",
-            icon: "https://cdn.simpleicons.org/instagram/E4405F"
         },
         {
             label: "Email",
-            url: "mailto:   miteshkumavat777@gmail.com",
-            icon: "https://cdn.simpleicons.org/gmail/D14836"
+            url: "miteshkumavat777@gmail.com",
         },
         {
             label: "Portfolio",
             url: "https://miteshkumavat.vercel.app",
-            icon: "https://cdn.simpleicons.org/vercel/000000"
         }
     ],
     interests: [
@@ -180,11 +170,4 @@ export const keywords: string[] = [
     "Gujarat",
     "India",
     "Student",
-];
-
-export const FOOTER_LINKS = [
-    { id: "01", label: "Home", path: "/" },
-    { id: "02", label: "About", path: "#about" },
-    { id: "03", label: "Projects", path: "#projects" },
-    { id: "04", label: "Contact", path: "#contact" },
 ];
